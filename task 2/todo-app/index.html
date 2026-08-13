@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interactive To-Do List App demonstrating JavaScript DOM manipulation" />
+    <title>To-Do List — Interactive App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="py-4">
+      <div class="container text-center">
+        <h1 class="app-title">To-Do List</h1>
+        <p class="lead subtitle">Organize your day, one task at a time.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="container">
+        <div class="card app-card mx-auto">
+          <div class="card-body">
+            <form id="task-form" class="d-flex gap-2 mb-3" aria-label="Add new task">
+              <label for="task-input" class="visually-hidden">Enter a new task</label>
+              <input id="task-input" class="form-control" type="text" placeholder="Enter a new task..." aria-label="Task input">
+              <button id="add-task-btn" class="btn btn-primary" type="submit" title="Add Task">Add Task</button>
+            </form>
+
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+              <div id="task-count" class="text-muted">0 tasks remaining</div>
+              <div class="btn-group" role="group" aria-label="Filter tasks">
+                <button class="btn btn-outline-secondary filter-btn active" data-filter="all" title="Show all tasks">All</button>
+                <button class="btn btn-outline-secondary filter-btn" data-filter="active" title="Show active tasks">Active</button>
+                <button class="btn btn-outline-secondary filter-btn" data-filter="completed" title="Show completed tasks">Completed</button>
+              </div>
+            </div>
+
+            <ul id="task-list" class="list-group mb-3" aria-live="polite"></ul>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div id="empty-state" class="text-muted">No tasks yet. Add your first task! 🚀</div>
+              <button id="clear-completed-btn" class="btn btn-sm btn-outline-danger" title="Clear completed tasks">Clear Completed</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4 mt-4 text-center text-muted">
+      © 2026 Darshan | JavaScript DOM Project
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
